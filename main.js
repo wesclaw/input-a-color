@@ -6,16 +6,20 @@ function changeColor(e) {
   e.preventDefault();
   const inputValue = input.value.toLowerCase();
   input.value = '';
+  setTimeout(()=>{
   makePink(inputValue);
   makeBlack(inputValue);
   makeCyan(inputValue);
-}
+  makeGreen(inputValue)
+  },200)
+} 
 
 function makeBlack(color) {
-  if (color === 'black' || color==='pop') {
+  if (color === 'black' || color==='dark') {
     changeThis.classList.add('change2Black');
     changeThis.classList.remove('addPink');
     changeThis.classList.remove('changeCyan');
+    changeThis.classList.remove('addGreen') 
   }
 }
 
@@ -24,6 +28,7 @@ function makePink(color) {
     changeThis.classList.add('addPink');
     changeThis.classList.remove('change2Black');
     changeThis.classList.remove('changeCyan');
+    changeThis.classList.remove('addGreen')
   }
 }
 
@@ -32,6 +37,16 @@ function makeCyan(color) {
     changeThis.classList.add('changeCyan');
     changeThis.classList.remove('change2Black');
     changeThis.classList.remove('addPink');
+    changeThis.classList.remove('addGreen')
+  }
+}
+
+function makeGreen(color){
+  if(color==='green'){
+    changeThis.classList.remove('changeCyan');
+    changeThis.classList.remove('change2Black');
+    changeThis.classList.remove('addPink');
+    changeThis.classList.add('addGreen')
   }
 }
 
