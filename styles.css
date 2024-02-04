@@ -1,137 +1,35 @@
-:root {
-  --color-animation-pink: pink;
-  --color-animation-black: black;
-  --color-animation-cyan: cyan;
-  /* Add more color variables as needed */
+body{
+  font-family: sans-serif;
 }
 
-/* create custom properties for eaach color and then use only one @keyframes just  */
-
-body {
-background-color: white;
+.changeThis{
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  z-index: -1;
 }
 
-html {
-overflow: hidden;
+@keyframes change {
+  0% {
+  height: 0vh; 
+  width: 0vw;
+  border-radius: 50%;
+  }
+  50% {
+  height: 100vh;
+  width: 100vw;  
+  border-radius: 50%;
+  }
+  100% {
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0%;
+  }
 }
-
-.changeThis {
-height: 10px;
-width: 10px;
-border-radius: 50%;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%); 
-}
-
-.addPink {
-animation-name: changeMe;
-animation-timing-function: linear;
-animation-duration: 1s;
-animation-fill-mode: forwards;
-z-index: -1;
-background-color: rgb(207, 172, 178); 
-}
-
-.change2Black {
-animation-name: change2Black;
-animation-timing-function: linear;
-animation-duration: 1s;
-animation-fill-mode: forwards;
-z-index: -1;
-background-color: rgba(3, 3, 3, 0.863);
-
-}
-
-.changeCyan {
-animation-name: changeCyan;
-animation-timing-function: linear;
-animation-duration: 1s;
-animation-fill-mode: forwards;
-z-index: -1;
-background-color:rgb(73, 209, 209);
-} 
-
-.addGreen {
-animation-name: changeGreen;
-animation-timing-function: linear;
-animation-duration: 1s;
-animation-fill-mode: forwards;
-z-index: -1;
-background-color:rgb(108, 185, 108)
-}
-
-@keyframes changeMe {
-0% {
-height: 0vh; 
-width: 0vw;
-border-radius: 50%;
-}
-50% {
-height: 100vh;
-width: 100vw;  
-border-radius: 50%;
-}
-100% {
-height: 100vh;
-width: 100vw;
-border-radius: 0%;
-}
-}
-
-@keyframes change2Black {
-0% {
-height: 0vh; 
-width: 0vw;
-border-radius: 50%;
-}
-50% {
-height: 100vh;
-width: 100vw; 
-border-radius: 50%;
-}
-100% {
-height: 100vh;
-width: 100vw;
-border-radius: 0%;
-}
-}
-
-@keyframes changeCyan {
-0% {
-height: 0vh; 
-width: 0vw;
-border-radius: 50%;
-}
-50% {
-height: 100vh;
-width: 100vw; 
-border-radius: 50%;
-}
-100% {
-height: 100vh;
-width: 100vw;
-border-radius: 0%;
-}
-} 
-
-
-@keyframes changeGreen {
-0% {
-height: 0vh; 
-width: 0vw;
-border-radius: 50%;
-}
-50% {
-height: 100vh;
-width: 100vw; 
-border-radius: 50%;
-}
-100% {
-height: 100vh;
-width: 100vw;
-border-radius: 0%;
-}
-} 
-
