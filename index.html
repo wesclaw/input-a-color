@@ -11,11 +11,38 @@
   </head>
   <body>
     <form id="form">
-      <p>What is your favorite color?</p>
       <input type="text" id="input">
       <input type="submit">
+      <h1>input a color</h1> 
     </form>
-    <div class="changeThis"></div>
-    <script src="colorDb.js" async defer></script>
+    <div id="circle"></div>
+    <button id="reset-btn">RESET</button>
+      <script>
+      const body = document.querySelector('body')
+      const input = document.getElementById('input')
+      const form = document.getElementById('form')
+      const circle = document.getElementById('circle')
+      const reset_btn = document.getElementById('reset-btn')
+
+      function makeAnimation(inputValue){
+        circle.style.backgroundColor = inputValue
+        circle.style.animationName = 'growUp' 
+        input.value = '' 
+        form.remove() 
+        setTimeout(()=>{
+          reset_btn.style.display = 'block'
+        },1000) 
+        reset_btn.addEventListener('click',e=>{
+          location.reload()
+        })  
+      } 
+      
+      form.addEventListener('submit', e=>{
+        e.preventDefault()
+        const inputValue = input.value;
+        makeAnimation(inputValue)
+      })
+
+    </script>
   </body>
 </html>
